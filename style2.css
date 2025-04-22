@@ -1,0 +1,66 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  /* Allow the carousel to span the full width */
+  margin: 0 auto;
+
+  overflow-x: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  /* Allow the track to expand based on content */
+  animation: scroll 20s linear infinite;
+  /* Continuous scrolling animation */
+}
+
+.carousel-image {
+  width: auto;
+  /* Allow images to take their natural width */
+  height: 400px;
+  /* Maintain consistent height */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button-left {
+  left: 10px;
+}
+
+.carousel-button-right {
+  right: 10px;
+}
+
+.noMarginOrPadding {
+  width: 99.23vw !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
