@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <title>Nick's story</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nick's Story</title>
   <link rel="stylesheet" href="https://css.hackclub.com/theme.css" />
-  <link rel="stylesheet" href="style2.css">
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style2.css?v=1.1" />
+  <link rel="stylesheet" href="style.css?v=1.1" />
   <script src="script.js" defer></script>
+  <script src="ai.js" defer></script>
 </head>
 
 <body>
+  <!-- Banner -->
   <a class="banner" target="_blank" href="https://hackclub.com/">
-    <img src="images/flag-orpheus-top.png" />
+    <img src="./orpheus.png" alt="Hack Club Banner" />
   </a>
 
   <!-- Language Switcher -->
-  <div style="position: absolute; top: 10px; right: 10px;">
-    <button id="languageSwitcher" onclick="switchLanguage()"
-      style="padding: 5px; font-size: 14px; display: flex; align-items: center; gap: 5px;">
+  <div class="language-switcher">
+    <button id="languageSwitcher" onclick="switchLanguage()">
       <span id="languageFlag">
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg"
           alt="English Flag" width="16" height="12" />
@@ -28,11 +29,13 @@
     </button>
   </div>
 
+  <!-- Header -->
   <header>
     <h1 class="ultratitle">Nick Essleman</h1>
     <p class="headline">A passionate student who loves creating and learning.</p>
   </header>
 
+  <!-- About Me Section -->
   <div class="card container">
     <h2 class="headline" data-en="About Me" data-nl="Over Mij">About Me</h2>
     <p data-en="I'm <?php echo floor((time() - strtotime('2008-08-08')) / (365.25 * 24 * 60 * 60) * 100) / 100; ?> years old."
@@ -96,6 +99,7 @@
     </p>
   </div>
 
+  <!-- Programming Journey Section -->
   <div class="card container">
     <h2 class="headline">My Programming Journey</h2>
     <ol>
@@ -110,12 +114,10 @@
       <li>
         <strong>Current Education:</strong> I joined Media College Amsterdam.
         <ul>
-          <li>Learned the basics of <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code>, and <code>PHP</code>.
-          </li>
+          <li>Learned the basics of <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code>, and <code>PHP</code>.</li>
           <li>Discovered <a href="#foundHackClub" class="pill">Hack Club</a>.</li>
           <li>Expanded my skills to include <code>Java</code>, <code>C</code>, <code>Lua</code>, <code>Bash</code>, and
-            <code>Minecraft Datapacks</code>.
-          </li>
+            <code>Minecraft Datapacks</code>.</li>
         </ul>
       </li>
       <li>
@@ -128,6 +130,7 @@
     <p>Like most things in life, my journey is a <strong>work in progress</strong>.</p>
   </div>
 
+  <!-- How I Joined Hack Club Section -->
   <div class="card container" id="foundHackClub">
     <h2 class="headline">How I Joined Hack Club</h2>
     <ol>
@@ -148,6 +151,7 @@
     </ol>
   </div>
 
+  <!-- Things I Made Section -->
   <div class="card container" style="margin-top: var(--spacing-5)">
     <h2 class="headline">Things I Made</h2>
     <ul>
@@ -182,6 +186,7 @@
     </ul>
   </div>
 
+  <!-- AI Message Section -->
   <div class='card container'>
     <h2 class="headline">An Ai Message about Nick:</h2>
     <h2 id="js--ai-Message">Loading</h2>
@@ -189,7 +194,7 @@
   </div>
 
   <!-- Image Collage Section -->
-  <div class="container wide noMarginOrPadding" style="margin-top: var(--spacing-5); text-align: center;">
+  <div class="container wide" style="text-align: center;">
     <h2 class="headline">Juice 2025</h2>
     <h2 class="subheadline">Juice was a HackClub event, hosted by Thomas Stubblefield</h2>
     <div class="grid" id="imageGrid">
@@ -204,20 +209,17 @@
     </div>
   </div>
 
-
-  <footer style="margin-top: var(--spacing-5); text-align: center; font-size: 14px; color: #555;">
+  <!-- Footer -->
+  <footer class="container wide">
     <p>
       This page was created by Nick Essleman and is open source.
-      <a href="https://github.com/Nickdev8/Nick" target="_blank" style="color: #ec3750; text-decoration: none;">View the
-        source code on GitHub</a>.
+      <a href="https://github.com/Nickdev8/Nick" target="_blank">View the source code on GitHub</a>.
     </p>
     <p>
-      It uses the <a href="https://css.hackclub.com/" target="_blank"
-        style="color: #ec3750; text-decoration: none;">Hack Club CSS library</a>.
+      It uses the <a href="https://css.hackclub.com/" target="_blank">Hack Club CSS library</a>.
     </p>
-    <p style="font-size: 12px; margin-top: 10px;">
-      Licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank"
-        style="color: #ec3750; text-decoration: none;">MIT License</a>.
+    <p>
+      Licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.
     </p>
   </footer>
 </body>

@@ -40,7 +40,7 @@ async function main() {
     const aiText = document.getElementById('js--ai-Message');
     aiText.innerHTML = 'Loading...';
 
-    const result = await callAIHackClubAPI(message);
+    const result = await callAIHackClubAPIfake(message);
     const json = JSON.parse(result);
     console.log(json);
     aiText.innerHTML = result ? json.choices[0].message.content + '<br><br>' : 'An error occurred.';

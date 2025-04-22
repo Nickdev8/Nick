@@ -1,6 +1,3 @@
-<?php
-$maximages = 50; // Number of images to load per request
-?>
 <!DOCTYPE html>
 <html lang="en">
 

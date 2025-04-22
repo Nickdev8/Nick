@@ -4,7 +4,7 @@ ob_start();
 
 $dir = './googlealbum_compressed/';
 $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
-$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 50;
+$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 20; // Start with 20 images
 $displayed = isset($_GET['displayed']) ? explode(',', $_GET['displayed']) : [];
 
 $imageExtensions = ['jpg', 'jpeg', 'png', 'gif'];
