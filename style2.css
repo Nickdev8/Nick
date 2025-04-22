@@ -1,66 +1,61 @@
-.carousel {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 100%;
-  /* Allow the carousel to span the full width */
-  margin: 0 auto;
+/* Delete these styles and add your own styles here! */
 
-  overflow-x: hidden;
+body {
+  font-size: var(--font-3);
 }
 
-.carousel-track {
-  display: flex;
-  width: max-content;
-  /* Allow the track to expand based on content */
-  animation: scroll 20s linear infinite;
-  /* Continuous scrolling animation */
+header {
+  background: var(--black);
+  color: var(--white);
+  padding: var(--spacing-6) var(--spacing-0) var(--spacing-6);
+  text-align: center;
 }
 
-.carousel-image {
-  width: auto;
-  /* Allow images to take their natural width */
-  height: 400px;
-  /* Maintain consistent height */
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.carousel-button {
+.banner {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
+  top: -10px;
+  left: var(--spacing-4);
 }
 
-.carousel-button-left {
-  left: 10px;
+.banner img {
+  height: 80px;
 }
 
-.carousel-button-right {
-  right: 10px;
+.banner:hover img {
+  animation: wave-flag 0.5s linear infinite alternate;
 }
 
-.noMarginOrPadding {
-  width: 99.23vw !important;
-  max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
+@media (prefers-reduced-motion: reduce) {
+  .banner:hover img {
+    transition: 0.1875s cubic-bezier(0.375, 0, 0.675, 1) transform;
+    transform-origin: top left;
   }
+}
 
-  to {
-    transform: translateX(-100%);
+@keyframes wave-flag {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+header > p, header > p > a{
+  color: var(--white)!important;
+}
+
+.container {
+  margin: var(--spacing-4) auto;
+}
+
+.blurb {
+  border: 2px dashed var(--border);
+  border-radius: var(--radii-default);
+  font-size: var(--font-4);
+  padding: var(--spacing-4);
+}
+
+.title {
+  margin-bottom: var(--spacing-4);
 }

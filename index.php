@@ -5,16 +5,9 @@
   <meta charset="utf-8" />
   <title>Nick's story</title>
   <link rel="stylesheet" href="https://css.hackclub.com/theme.css" />
-  <link rel="stylesheet" href="style.css" />
-
-  <meta property="og:title" content="Nick's story" />
-  <meta name="twitter:title" content="Nick's story" />
-  <meta name="description" content="Nick's story" />
-  <meta property="og:description" content="Nick's story" />
-  <meta name="twitter:description" content="Nick's story" />
-
   <link rel="stylesheet" href="style2.css">
-  <script src="script2.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+
   <script src="script.js" defer></script>
 </head>
 
@@ -121,7 +114,8 @@
           </li>
           <li>Discovered <a href="#foundHackClub" class="pill">Hack Club</a>.</li>
           <li>Expanded my skills to include <code>Java</code>, <code>C</code>, <code>Lua</code>, <code>Bash</code>, and
-            <code>Minecraft Datapacks</code>.</li>
+            <code>Minecraft Datapacks</code>.
+          </li>
         </ul>
       </li>
       <li>
@@ -160,10 +154,8 @@
       <li>
         <strong>Party VR:</strong> A multiplayer co-location VR game available on the <strong>Meta Store</strong>.
         <br>
-        <a href="https://38406.hosts2.ma-cloud.nl/index2.html" class="pill"
-          style="text-decoration: none; color: white; background-color: #ec3750; padding: 10px 20px; border-radius: 25px; font-weight: bold; display: inline-block; margin-top: 10px;">
-          Party VR
-        </a>
+        <a href="https://www.meta.com/en-gb/experiences/partyvr/9355384034552901/?require_login=true" target="_blank"
+          class="pill">Party VR</a>
       </li>
       <li>
         <strong>Drift Game:</strong> A demo for a realistic car controller.
@@ -173,6 +165,8 @@
           width="552" height="167">
           <a href="https://nikkcc.itch.io/drift">Drift Game in the City by Nick</a>
         </iframe>
+        <br>
+        <a href="https://nikkcc.itch.io/drift" target="_blank" class="pill">Drift Game</a>
       </li>
       <li>
         <strong>Monkey Swing:</strong> A simple yet challenging rage game.
@@ -182,41 +176,50 @@
           width="552" height="167">
           <a href="https://nikkcc.itch.io/ms">MonkeySwing by Nick</a>
         </iframe>
+        <br>
+        <a href="https://nikkcc.itch.io/ms" target="_blank" class="pill">MonkeySwing</a>
       </li>
     </ul>
   </div>
 
+  <div class='card container'>
+    <h2 class="headline">An Ai Message about Nick:</h2>
+    <h2 id="js--ai-Message">Loading</h2>
+    <h2 class="caption">This makes use of <a href="http://ai.hackclub.com">Ai.HackClub.com</a></h2>
+  </div>
+
+  <!-- Image Collage Section -->
   <div class="container wide noMarginOrPadding" style="margin-top: var(--spacing-5); text-align: center;">
     <h2 class="headline">Juice 2025</h2>
-    <div class="carousel">
-      <div class="carousel-track">
-        <img src="images/photo1.jpg" class="carousel-image" />
-        <img src="images/photo10.jpg" class="carousel-image" />
-        <img src="images/photo11.jpg" class="carousel-image" />
-        <img src="images/photo5.jpg" class="carousel-image" />
-        <img src="images/photo3.jpg" class="carousel-image" />
-        <img src="images/photo12.jpg" class="carousel-image" />
-        <img src="images/photo4.jpg" class="carousel-image" />
-        <img src="images/photo6.jpg" class="carousel-image" />
-        <img src="images/photo8.jpg" class="carousel-image" />
-        <img src="images/photo2.jpg" class="carousel-image" />
-        <img src="images/photo9.jpg" class="carousel-image" />
-        <img src="images/photo7.jpg" class="carousel-image" />
-      </div>
+    <h2 class="subheadline">Juice was a HackClub event, hosted by Thomas Stubblefield</h2>
+    <div class="grid" id="imageGrid">
+      <?php include './load_images.php'; // Load the first set of images ?>
+    </div>
+    <button id="loadMore" onclick="loadMoreImages()">Load More</button>
+
+    <!-- Fullscreen Preview Modal -->
+    <div id="preview" class="preview">
+      <span class="close" onclick="closePreview()">&times;</span>
+      <img id="previewImage" src="" alt="Preview">
     </div>
   </div>
 
+
   <footer style="margin-top: var(--spacing-5); text-align: center; font-size: 14px; color: #555;">
     <p>
-      This page was created by Nick Essleman and is open source.  
-      <a href="https://github.com/Nickdev8/Nick" target="_blank" style="color: #ec3750; text-decoration: none;">View the source code on GitHub</a>.
+      This page was created by Nick Essleman and is open source.
+      <a href="https://github.com/Nickdev8/Nick" target="_blank" style="color: #ec3750; text-decoration: none;">View the
+        source code on GitHub</a>.
     </p>
     <p>
-      It uses the <a href="https://css.hackclub.com/" target="_blank" style="color: #ec3750; text-decoration: none;">Hack Club CSS library</a>.
+      It uses the <a href="https://css.hackclub.com/" target="_blank"
+        style="color: #ec3750; text-decoration: none;">Hack Club CSS library</a>.
     </p>
     <p style="font-size: 12px; margin-top: 10px;">
-      Licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank" style="color: #ec3750; text-decoration: none;">MIT License</a>.
+      Licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank"
+        style="color: #ec3750; text-decoration: none;">MIT License</a>.
     </p>
   </footer>
 </body>
+
 </html>

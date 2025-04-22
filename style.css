@@ -1,61 +1,92 @@
-/* Delete these styles and add your own styles here! */
-
-body {
-  font-size: var(--font-3);
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
-header {
-  background: var(--black);
-  color: var(--white);
-  padding: var(--spacing-6) var(--spacing-0) var(--spacing-6);
-  text-align: center;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adaptive column sizing */
+    gap: 2px; /* Small gap between items */
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    grid-auto-flow: dense; /* Ensures better packing of grid items */
 }
 
-.banner {
-  position: absolute;
-  top: -10px;
-  left: var(--spacing-4);
+.media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000; /* Fallback background for videos and iframes */
 }
 
-.banner img {
-  height: 80px;
+.media img, .media video, .media iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures media fills the grid cell without white space */
+    transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
 }
 
-.banner:hover img {
-  animation: wave-flag 0.5s linear infinite alternate;
+.media > img:hover {
+    transform: scale(1.2); /* Increase size to pop out on hover */
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .banner:hover img {
-    transition: 0.1875s cubic-bezier(0.375, 0, 0.675, 1) transform;
-    transform-origin: top left;
-  }
+/* Landscape images take up 2 columns */
+.media.landscape {
+    grid-column: span 2;
 }
 
-@keyframes wave-flag {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-5deg);
-  }
+button#loadMore {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-header > p, header > p > a{
-  color: var(--white)!important;
+button#loadMore:hover {
+    background-color: #0056b3;
 }
 
-.container {
-  margin: var(--spacing-4) auto;
+/* Fullscreen Preview */
+.preview {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
 }
 
-.blurb {
-  border: 2px dashed var(--border);
-  border-radius: var(--radii-default);
-  font-size: var(--font-4);
-  padding: var(--spacing-4);
+.preview img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Maintain original aspect ratio */
 }
 
-.title {
-  margin-bottom: var(--spacing-4);
+.preview .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.preview .close:hover {
+    color: #ccc;
 }
